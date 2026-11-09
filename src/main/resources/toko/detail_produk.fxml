@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="toko.controller.DetailProdukController"
+            stylesheets="@styles/app.css">
+    <top>
+        <HBox spacing="16" styleClass="header">
+            <Label text="Detail Produk Toko" styleClass="title"/>
+            <Button text="Lihat Daftar" onAction="#bukaDaftar"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <VBox spacing="16" styleClass="page">
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Informasi Produk" styleClass="subtitle"/>
+                        
+                        <GridPane hgap="12" vgap="8">
+                            <Label text="Kode Produk:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <Label fx:id="kodeLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            
+                            <Label text="Nama Produk:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <Label fx:id="namaLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            
+                            <Label text="Kategori:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <Label fx:id="kategoriLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            
+                            <Label text="Harga (Rp):" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                            <Label fx:id="hargaLabel" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        </GridPane>
+                        
+                        <HBox spacing="10">
+                            <Button text="Edit Produk" onAction="#edit" styleClass="button-primary"/>
+                            <Button text="Kembali ke Daftar" onAction="#bukaDaftar"/>
+                        </HBox>
+                        
+                        <Label fx:id="pesanLabel" wrapText="true" styleClass="error"/>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
